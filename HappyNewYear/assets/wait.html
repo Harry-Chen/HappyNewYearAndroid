@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>请耐心等候</title>
+	<link href="stylesheets/fixed-positioning.css" rel="stylesheet" type="text/css" />
+	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+	
+
+	<div id="intro" data-0="opacity:1;top:3%;transform:rotate(0deg);transform-origin:0 0;">
+		<h1>Please Wait...</a></h1>
+		<h2 class="happy-new-year" id='countdown'>Don't be eager.</h2>
+		<div>
+		<script type="text/javascript">   
+		startclock();
+		var timerID = null;   
+		var timerRunning = false;   
+		function showtime() {   
+			Today = new Date();
+			var year = Today.getFullYear();
+			if (year==2014){
+				window.location.href="index.html";
+			}
+			var NowHour = Today.getHours();   
+			var NowMinute = Today.getMinutes();   
+			var NowMonth = Today.getMonth();   
+			var NowDate = Today.getDate();   
+			var NowYear = Today.getYear();   
+			var NowSecond = Today.getSeconds();   
+			if (NowYear <2000) NowYear=1900+NowYear;   
+			Today = null;   
+			Hourleft = 23 - NowHour   
+			Minuteleft = 59 - NowMinute   
+			Secondleft = 59 - NowSecond   
+			Yearleft = year - NowYear   
+			Monthleft = 12 - NowMonth - 1 
+			Dateleft = 31 - NowDate  
+			Hourleft = Dateleft * 24 + Hourleft; 
+			if (Secondleft<0)   
+			{   
+				Secondleft=60+Secondleft;   
+				Minuteleft=Minuteleft-1;   
+			}   
+			if (Minuteleft<0)   
+			{    
+				Minuteleft=60+Minuteleft;   
+				Hourleft=Hourleft-1;   
+			}   
+			if (Hourleft<0)   
+			{   
+				Hourleft=24+Hourleft;   
+				Dateleft=Dateleft-1;   
+			}  
+			if (Dateleft<0)   
+			{   
+				Dateleft=31+Dateleft;   
+				Monthleft=Monthleft-1;   
+			}   
+			if (Monthleft<0)   
+			{   
+				Monthleft=12+Monthleft;   
+				Yearleft=Yearleft-1;   
+			}   
+
+			if (Hourleft<10)   
+			{   
+				Hourleft="0"+Hourleft;
+			}
+			if (Secondleft<10)   
+			{   
+				Secondleft="0"+Secondleft;
+			}  
+			if (Minuteleft<10)   
+			{   
+				Minuteleft="0"+Minuteleft;
+			}
+			Temp=Hourleft+':'+Minuteleft+':'+Secondleft;
+			document.getElementById("countdown").innerHTML=Temp;
+			timerID = setTimeout("showtime()",1000);   
+			timerRunning = true;   
+		}   
+		var timerID = null;   
+		var timerRunning = false;   
+		function stopclock () {   
+			if(timerRunning)   
+			clearTimeout(timerID);   
+			timerRunning = false;   
+		}   
+		function startclock () {   
+			stopclock();   
+			showtime();   
+		}   
+		// -->   
+		</script>   
+		<p class="arrows"></p>
+	</div>
+
+
+	</div>
+
+	<script type="text/javascript" src="dist/skrollr.min.js"></script>
+
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="dist/skrollr.ie.min.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+	var s = skrollr.init({
+		edgeStrategy: 'set',
+		easing: {
+			WTF: Math.random,
+			inverted: function(p) {
+				return 1-p;
+			}
+		}
+	});
+	</script>
+</body>
+
+</html>

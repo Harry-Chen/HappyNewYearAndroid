@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">HappyNewYear</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="wish_toast">叶子永远是蒲公英的叶子！</string>
 
 </resources>
